@@ -1,0 +1,28 @@
+<!-- The load() method loads data from a server and puts the returned data into the selected element. -->
+<!-- ${selector}.load(URL,data,Callback); -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div id="loaddata"><h2>this is going to change</h2></div>
+        <button class="btn btn-success" id="btnclick">Click on it</button>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#btnclick').click(function(){
+                $('#loaddata').load('load.txt');
+            })
+        });
+    </script>
+</body>
+</html>
