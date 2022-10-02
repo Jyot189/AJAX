@@ -1,0 +1,39 @@
+<!-- jquery $.get() method -->
+<!-- $.get(url,callback) -->
+
+<!-- jquery $.post method -->
+<!-- $.post(url,data,callback) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get post</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <p id="changehere">This line is going to be change</p>
+        <button class="btn btn-primary btnclick">Click</button>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.btnclick').click(function(){
+                // $.get('demo.html',function(data,status){
+                //     $('#changehere').html(data);
+                //     alert(status);
+                // })
+
+                $.post('post.php',{
+                    name:"jyot khant",
+                },function(data,status){
+                    $('#changehere').html(data);
+                    alert(status);
+                })
+            })
+        })
+    </script>
+</body>
+</html>
