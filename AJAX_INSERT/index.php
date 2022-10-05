@@ -25,6 +25,26 @@
                 <input type="text" name="submit" id="submit" value="Submit" class="btn btn-success">
             </form>
         </div>
+
+        <div>
+            <br><br>
+            <h1 class="text-center bg-primary text-white">Display Data using AJAX</h1>
+            <br>
+            <button id="displaydata" class="btn btn-danger">Diaplay</button>
+            <br><br>
+            <table class="table table-striped table-bordered text-center">
+                <thread>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                </thread>
+                <tbody id="response">
+
+                </tbody>
+                
+            </table>
+        </div>
+
     </div>
     <!-- $==jquery -->
     <script>
@@ -39,6 +59,16 @@
                         console.log(data);
                     }
                 })
+            })
+        })
+
+        $('#displaydata').click(function(){
+            $.ajax({
+                url:'display.php',
+                type: 'POST',
+                success:function(data){
+                    $('#response').html(data);
+                }
             })
         })
     </script>
